@@ -1,36 +1,26 @@
 
+/* COLOR SCHEME http://flatcolors.net/palette/203-flat-wbuttons# */
 
 
-.wrapper {
-  margin-right: auto; /* 1 */
-  margin-left:  auto; /* 1 */
+/* TOP BAR / LOGO and it's Interior */
 
-  max-width: 960px; /* 2 */
-
-  padding-right: 10px; /* 3 */
-  padding-left:  10px; /* 3 */
+.top-bar {
+  border-bottom: 5px solid #D1D5D8;
+  padding-top: 20px; 
+  padding-bottom: 17px;
 }
 
-fieldset {
-  border: none;
-}
-
-
-#logo {
+.logo {
   width: 110px;
   height: 60px;
-  background-color: #E87E04; 
+  background-color: #E74C3C; 
   display: block;  
-  /*float: left;*/  
-  margin-top: 5px;
-  margin-left: 11px;
 }
 
 .logo_letter {
   text-align: center;
   vertical-align: middle;
   line-height: 50px;
-  /* font-family: 'Indie Flower', cursive;*/
   font-family: sans-serif;
   color: #ffffff;
   font-size: 40px;
@@ -38,21 +28,342 @@ fieldset {
   padding-top: 8px;
 } 
 
-
-
-#logo_text p.title {
+.title {
   color: #34495e;
   font-family: 'Work Sans', sans-serif;
   font-size: 20px;
   font-weight: 500;
-  margin-left: 9px;
   padding-top: 7px;
-  margin-bottom: -2px;
+  letter-spacing: 1px;
+  margin: 10px 0px 3px 9px;
 }
 
-#logo_text p.sub_title {
-  color: #000;
+.sub_title {
+  color: #ABB7B7;
   font-family: 'Work Sans', sans-serif;
-  font-size: 14px;  
+  font-size: 13px;  
   margin-left: 9px;
+  letter-spacing: 1px;
 }
+
+
+/* ========== Schedule Side Bar ========== */
+
+.schedule-header {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #D1D5D8;
+  padding: 10px 10px;
+  border-bottom: 2px solid #3498DB;
+}
+
+.back-to-schedule-link {
+  text-decoration: none;
+  font-size: 12px;
+  color: #F1C40F;
+  border: 1px solid #F1C40F;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.download-button {
+  text-align: center;
+}
+
+/* ========== End Schedule Side Bar ========== */ 
+
+body {
+  border-top: 5px solid #3498DB;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  background-color: #ffffff;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+main {
+  padding: 20px 25px;
+  background: #ffffff;
+}
+
+legend {
+  margin-bottom: 20px;
+}
+
+.form-toggler {
+  float: right;
+}
+
+/* ========== Start API Results in Artilce Tags ========== */
+
+.reward-blocks-eb {
+  padding: 15px;
+  background-color: #ececec;
+  box-shadow: 1px 1px #F1C40F;
+  margin-bottom: 15px;
+}
+
+.reward-blocks-mu {
+  padding: 15px;
+  background-color: #ececec;
+  box-shadow: 1px 1px #E74C3C;
+  margin-bottom: 15px;
+}
+
+.name, .time {
+  margin-bottom: 10px;
+}
+
+
+/* ========== End API Results in Artilce Tags ========== */
+
+
+.left-column:after {
+  content: "";
+  clear: both;
+  display: block;
+  line-height: 0;
+} 
+
+
+
+.bold-text {
+  font-weight: 700;
+}
+
+
+
+.wrapper {
+  margin-right: auto; /* 1 */
+  margin-left:  auto; /* 1 */
+  max-width: 1100px; /* 2 */
+  padding-right: 10px; /* 3 */
+  padding-left:  10px; /* 3 */
+
+}
+
+fieldset {
+  border: none;
+}
+
+
+
+
+
+
+
+
+.task-form {
+  margin-bottom: 13px;
+}
+
+
+
+
+
+
+
+ul.row li {
+  padding: 8px 15px;
+  text-align: center;
+  border-radius: 8px;
+  background: #ececec;
+}
+
+.demo_height {
+  min-height: 400px;
+  background: #ececec;
+  padding: 15px 15px 20px 15px;
+}
+
+button {
+  background-color: #26C281;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.75;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+button.getrewards {
+  background-color: #3498DB;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 15px 0px 10px 0px;
+  opacity: 0.75;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+button.rewards:hover {
+  opacity: 1;
+}
+
+
+
+
+/* Style for Time Imput */
+
+@media only screen and (max-width: 563px) {
+
+  .time-in-input {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .time-out-input {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  label[for="task-start-time"], label[for="task-end-time"] {
+    display: inline-block;
+    width: 50px;
+  }
+
+ 
+
+}
+
+@media only screen and (max-width: 505px) {
+
+  #wakeup-time {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+
+}
+
+
+
+
+input[type="time"] {
+  font-size: 20px; 
+  border: none;
+  border-radius: 10px 10px 0px 0px;
+  padding: 3px 3px 3px 11px;
+  border-bottom: 2px solid #F1C40F;
+  margin-left: 15px;
+  background-color: #F2F1EF;
+  transition: 0.3s;
+}
+
+input[type="time"]:hover {
+  border-bottom: 2px solid #3498DB;
+}
+ 
+#task-start-time, #task-end-time  {
+  margin-right: 15px;
+}
+
+textarea {
+  border: none;
+  border-radius: 3px 3px 3px 3px;
+  background-color: #F2F1EF;
+  font-size: 18px;
+  padding: 15px;
+  width: 90%;
+}
+
+textarea::placeholder{
+  color: #c3c3c3;
+  font-style: italic;  
+ }
+
+/* ========== BEGIN Media Queries ========== */
+
+@media only screen and (max-width: 486px) {
+  .tagline-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .logo {
+    width: 100%;
+  }
+
+}
+  
+  
+@media only screen and (max-width: 768px) {
+  #schedule-wrapper {
+    display: block;
+    width: 100%;   
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .task-display-window {
+    margin: 0 auto;
+    float: none;
+    
+  }
+
+  #left-column {
+    width: 85%;
+    margin: 0 auto;
+    float: none;
+  }
+
+/*
+
+  .parent { 
+    display: table;
+  }
+  #left-column {
+    display: table-footer-group;
+  }
+  #schedule-wrapper {
+    display: table-header-group;
+  }
+
+*/
+
+/* this isn't working */
+  .demo_height { 
+    max-height: 200px;
+  }
+
+}
+
+/* ========== END Media Queries ========== */
+
+/*
+
+The 'my schedule column' is inside of body, div class wrapper, div class row margin row and then it, itself, is a div with a class of .two thrid and an #id of left column, and I am injecting a bunch of articles inside that
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+

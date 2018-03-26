@@ -4,45 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Title of the document</title>
-<link rel="stylesheet" type="text/css" href="main.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+<!--<link rel="stylesheet" type="text/css" href="main.css">-->
+<link rel="stylesheet" href="grid.css" />
+<link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
   <div class="wrapper">
-    <div id="logo"><p class="logo_letter">R&R</p></div>
-    <div id="logo_text">
-      <p class="title">Responsibiliy&Rewards</p>
-      <p class="sub_title">Day Scheduler to negotiate with yourself</p>
+    <div class="row top-bar">
+      <header>
+        <div class="half logo"><p class="logo_letter">R&R</p></div>
+        <div class="half tagline-block">
+          <p class="title">Responsibiliy&Rewards</p>
+          <p class="sub_title">Day Scheduler with rewards!</p>
+        </div>
+      </header>
+      <span class="js-back-to-schedule form-toggler"></span>
     </div>
-
-    <div class="form-container">
-      <form class="js-wake-time-form" role="form">
-      </form>
-      
-      <form class="js-schedule-task-form" role="form">
-      </form>
+    <div class="row margin_row parent">
+      <div class="two_third" id="left-column">
+         <section class="start-schedule"></section>
+         <div class="form-container">
+          <form class="js-wake-time-form" role="form">
+          </form>
+          <form class="js-schedule-task-form task-form" role="form">
+          </form>
+        </div>
+        <section class="rewards"></section>
+      </div>
+      <aside class="demo_height third" id="schedule-wrapper">
+        <header class="schedule-header">My Schedule</header>
+        <section class="js-task-display task-display-window"></section>
+        <div class="chosen-reward-display">
+        </div>
+        <div class="js-download-schedule download-button"></div>
+      </aside>
     </div>
-    <div class="js-task-display">
-    </div>
-    
-    <div class="chosen-reward-display">
-    </div>
-    
-    <p class="meetup"></p>
-    
-    <div class="js-download-schedule"></div>
-
-    <!--
-    <h1>Eventbrite Results</h1>
-    <p class="eventbrite"></p>
-    -->
-    
   </div>
-
-
-
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="main.js"></script>
 </body>
