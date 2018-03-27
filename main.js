@@ -155,7 +155,7 @@ function displayTasks() {
 function startRewardsFlow() {
 $('.rewards').html(`<button class="getrewards">When ready, check the rewards.</button>`);
 
-      $('.rewards').on('click', event => {
+      $('.rewards').on('click', '.getrewards', event => {
       $('.js-schedule-task-form').toggle();
       $.getJSON('https://ipinfo.io/json', function(data){
        console.log(data)
@@ -295,7 +295,7 @@ function displayMeetupResults(filteredApiResult, index) {
             <dt class="name bold-text">${filteredApiResult.name}</dt>
             <dd class="time bold-text">${complete12HrTime}</dd>
             <dd><a href="${filteredApiResult.event_url}" target="_blank">Go to official page</a></dd>
-            <button class="js-reward-schedule getrewards">Schedule Reward</button>
+            <button class="js-reward-schedule rewardsitems">Schedule Reward</button>
             <dl>
           </article>`;
 }
@@ -333,13 +333,14 @@ function displayEventbriteResults(eventBriteApiResult, index) {
               <dt class="name bold-text">${eventBriteApiResult.name.text}</dt>
               <dd class="time bold-text"><time>${complete12HrTime}</time></dd>
               <dd><a href="${eventBriteApiResult.url}" target="_blank">Go to official page</a></dd>
-              <button class="js-reward-schedule getrewards">Schedule Reward</button>
+              <button class="js-reward-schedule rewardsitems">Schedule Reward</button>
             </dl>
           </article>`;
 }
 
 function scheduleReward() {
   $('.rewards').on('click', '.js-reward-schedule', event => {
+    event.stopPropagation();
     console.log('it is working at least');
     let rewardItemName = $(event.currentTarget).siblings('.name').text();
     let rewardItemStartTime = $(event.currentTarget).siblings('.time').text();
