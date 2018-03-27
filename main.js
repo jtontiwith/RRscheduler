@@ -129,7 +129,7 @@ function formatInputTimes(startOrEndTimes) {
 
 
 function generateTaskItemsString(tasklist) {
-  if (tasklist.length >= 2 && allRewards.length === 0) {
+  if (tasklist.length === 2 && allRewards.length === 0) {
     startRewardsFlow(); 
   }
   const tasks = tasklist.map((task, index) => 
