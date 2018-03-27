@@ -194,6 +194,10 @@ button {
   border-radius: 2px;
 }
 
+.getrewards {
+  background-color: #E74C3C;
+}
+
 button:hover {
   opacity: 1;
 }
