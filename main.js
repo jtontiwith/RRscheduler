@@ -87,34 +87,21 @@ function handleTaskSubmit() {
     formattedTaskStartTime = formatInputTimes(taskStartTime);
     formattedTaskEndTime = formatInputTimes(taskEndTime);
 
-
     tasksAndTimes.push({
       start: formattedTaskStartTime,
       end: formattedTaskEndTime,
       activity: taskActivityName  
     })
 
-
-
     $('#task-start-time').val(taskEndTime);
     $('#task-end-time').val('');
     $('#task-activity').val('');
-    
-
-    console.log(tasksAndTimes[0].end)
-   /* 
-   j++
-   let lastEndTime = j === 1 ? '08:00' : tasksAndTimes[j].end;
-   if(j != 0) {console.log(j);}
-   console.log("buller"); 
-   console.log(j);
-   */
 
     console.log(tasksAndTimes);
     displayTasks();
-  //generateTaskItemsString(tasksAndTimes);
   });
 }
+
 
 //this function take the 24hours times that you get from 
 //runnning .val() on inputs and turns them in to 12 hour times
@@ -123,9 +110,7 @@ function formatInputTimes(startOrEndTimes) {
   taskTimeMin = startOrEndTimes.substring(3)
   let taskStartTime12hrs = ((taskTimeHrs + 11) % 12 + 1);
   return `${taskStartTime12hrs}:${taskTimeMin}`
-
 }
-
 
 
 function generateTaskItemsString(tasklist) {
@@ -142,7 +127,6 @@ function generateTaskItemsString(tasklist) {
 function generateTaskElement(task, taskIndex) {
   return `
     <p>${task.start} to ${task.end} - ${task.activity}<p>`
-
 }
 
 
@@ -153,8 +137,7 @@ function displayTasks() {
 
 
 function startRewardsFlow() {
-$('.rewards').html(`<button class="getrewards">When ready, check the rewards.</button>`);
-
+  $('.rewards').html(`<button class="getrewards">When ready, check the rewards.</button>`);
       $('.rewards').on('click', '.getrewards', event => {
       $('.js-schedule-task-form').toggle();
       $.getJSON('https://ipinfo.io/json', function(data){
@@ -171,13 +154,9 @@ $('.rewards').html(`<button class="getrewards">When ready, check the rewards.</b
            event.preventDefault();
        });
     }) 
-
-  });
-  
-  
+  }); 
 }
 
-//Eventbrite Token is... 2IECIQR5YEVJCHRLD7
 
 function getInfoFromEventbrite(lat, lng) {
   console.log(`the lat is ${lat} and the lng is ${lng} here`); 
@@ -199,7 +178,6 @@ function getInfoFromEventbrite(lat, lng) {
     'location.longitude': lng,
      token: 'YLHCYUV6MWY2WDN2EHYE',
     'location.within': '30mi',
-    //'start_date.keyword':'today',
     'start_date.range_start': currentISODateString, 
     'start_date.range_end': dateFromCurrentDateISOString   
   }
@@ -214,14 +192,11 @@ function getInfoFromEventbrite(lat, lng) {
       allRewards.push(eventBriteHtmlWrappedResults);
       console.log(allRewards);
       getInfoFromMeetup(lat, lng);
-    }); 
-
+  }); 
 }
 
-// Meetup key is... 7f274db441d22481c12916293f201e
 
 function getInfoFromMeetup(lat, lng) {
-
 let url = 'https://api.meetup.com/2/open_events?and_text=False&offset=0&format=json&lon=' + lng +'&limited_events=False&page=200&radius=25.0&lat=' + lat + '&desc=False&status=upcoming&sig_id=189363096&sig=3d3dffd401a47afcedebbf4e854bc7667a05280d';
 
 $.ajax({ 
@@ -235,14 +210,12 @@ $.ajax({
       filterMeetupInfo(data);
     },
   });
-
 }
 
 function filterMeetupInfo(apiResult) {
   console.log(apiResult.results);
   //getting current time and date and the time and date exacty 
   //two days in the future
-
   let Currenttime = new Date().getTime();
   let diff = 2160;
   let futureDate = new Date(Currenttime + diff*60000).getTime();
@@ -259,18 +232,15 @@ function filterMeetupInfo(apiResult) {
   console.log(filteredAndHtmlWrappedResults);
   console.log(filteredForDateRelevance);
   console.log(filteredAndHtmlWrappedResults);
-
   renderRewards();
 }
 
-  //the time needs to look like this to start that flow
-  //2018-03-23T19:00:00
+
 function displayMeetupResults(filteredApiResult, index) { 
   muRawDateTime = new Date(filteredApiResult.time)
   let muOffsetDate = new Date(muRawDateTime.getTime() - muRawDateTime.getTimezoneOffset() * 60000);
   let muCurrentISODateString = muOffsetDate.toISOString().substring(0,19);
   console.log(muCurrentISODateString);
-
   //grabbing out hours and minutes
   let eventTimeHrs = parseInt(muCurrentISODateString.substring(11,13), 10);
   let eventTimeMin = parseInt(muCurrentISODateString.substring(14,16), 10);
@@ -338,6 +308,7 @@ function displayEventbriteResults(eventBriteApiResult, index) {
           </article>`;
 }
 
+
 function scheduleReward() {
   $('.rewards').on('click', '.js-reward-schedule', event => {
     event.stopPropagation();
@@ -356,6 +327,7 @@ function scheduleReward() {
     //of name, grab it's text
   })
 }
+
 
 function generateSelectedRewardsString() {
   selectedRewardsString = selectedRewards.map((reward, index) => 
@@ -417,7 +389,6 @@ function downloadSchedulePrompt() {
 function downloadSchedule(text, filename) { 
   //create blob
   let blob = new Blob([text], {type: "text/plain"});
-
   //URL.createObjectURL() static method creates a DOMString containing
   //a URL representing the object given in the parameter.
   let url = window.URL.createObjectURL(blob);
