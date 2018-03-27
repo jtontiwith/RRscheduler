@@ -134,7 +134,7 @@ function generateTaskItemsString(tasklist) {
   }
   const tasks = tasklist.map((task, index) => 
     generateTaskElement(task, index));
-  // join together the strings
+  // join together the stringsss
   return tasks.join("");
 }
 
