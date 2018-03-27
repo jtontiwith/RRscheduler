@@ -141,7 +141,7 @@ function generateTaskItemsString(tasklist) {
 
 function generateTaskElement(task, taskIndex) {
   return `
-    <p>From ${task.start} to ${task.end} I will ${task.activity}<p>`
+    <p>${task.start} to ${task.end} I will ${task.activity}<p>`
 
 }
 
