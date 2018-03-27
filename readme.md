@@ -4,7 +4,7 @@ Responsibiliy&Rewards Scheduler is light weight app that helps you schedule your
 
 ## Purpose 
 
-> You have to negotiate with yourself and not tyrannize yourself...
+>You have to negotiate with yourself and not tyrannize yourself.
 
 -Jordan Peterson 
 
@@ -17,10 +17,10 @@ Sometimes task lists can get a little tyrannical. You end up writing a long list
 ![Image of Landing](https://github.com/jtontiwith/RRscheduler/blob/master/screenshots/R_R_Scheduler_Landing.png)
 
 ### Adding Responsibilities
-![Image of Landing](RRscheduler/screenshots/R_R_Scheduler_TaskAdd.png)
+![Image of Landing](https://github.com/jtontiwith/RRscheduler/blob/master/screenshots/R_R_Scheduler_TaskAdd.png)
 
 ### Selecting Rewards
-![Image of Landing](RRscheduler/screenshots/R_R_Scheduler_Rewards.png)
+![Image of Landing](https://github.com/jtontiwith/RRscheduler/blob/master/screenshots/R_R_Scheduler_Rewards.png)
 
 ## Live Demo 
 
