@@ -1,3 +1,4 @@
+'use strict'
 
 const allRewards = [];
 const wakeUpTime = [];
@@ -68,7 +69,7 @@ function addTaskAndTime() {
         </span>
       </div>
       <div class="row">    
-        <label for="task-activity"></label>
+        <label for="task-activity">Responsibility</label>
         <textarea id="task-activity" name="textarea" rows="7" placeholder="...action verb + X responsibility driving towards Y outcome. (eg. crush the slide deck for my for presentation at work so myself / my team demonstrate our competence to our collegues.)" required></textarea>
       </div>
       <button type='submit'>Submit</button>
@@ -83,9 +84,9 @@ function handleTaskSubmit() {
     let taskStartTime = $('#task-start-time').val();
     let taskEndTime = $('#task-end-time').val();
     let taskActivityName = $('#task-activity').val();
-    
-    formattedTaskStartTime = formatInputTimes(taskStartTime);
-    formattedTaskEndTime = formatInputTimes(taskEndTime);
+
+    let formattedTaskStartTime = formatInputTimes(taskStartTime);
+    let formattedTaskEndTime = formatInputTimes(taskEndTime);
 
     tasksAndTimes.push({
       start: formattedTaskStartTime,
@@ -107,7 +108,7 @@ function handleTaskSubmit() {
 //runnning .val() on inputs and turns them in to 12 hour times
 function formatInputTimes(startOrEndTimes) {
   let taskTimeHrs = parseInt(startOrEndTimes.substring(0,2), 10);
-  taskTimeMin = startOrEndTimes.substring(3)
+  let taskTimeMin = startOrEndTimes.substring(3);
   let taskStartTime12hrs = ((taskTimeHrs + 11) % 12 + 1);
   return `${taskStartTime12hrs}:${taskTimeMin}`
 }
@@ -170,7 +171,7 @@ function getInfoFromEventbrite(lat, lng) {
   //here are creating future date 1.5 days in the future
   //let dateFromCurrentDate = 
   offsetDate.setDate(offsetDate.getDate() + 1.5)
-  dateFromCurrentDateISOString = offsetDate.toISOString().substring(0,19);
+  let dateFromCurrentDateISOString = offsetDate.toISOString().substring(0,19);
   console.log(dateFromCurrentDateISOString);
   
   const query = {
@@ -237,7 +238,7 @@ function filterMeetupInfo(apiResult) {
 
 
 function displayMeetupResults(filteredApiResult, index) { 
-  muRawDateTime = new Date(filteredApiResult.time)
+  let muRawDateTime = new Date(filteredApiResult.time)
   let muOffsetDate = new Date(muRawDateTime.getTime() - muRawDateTime.getTimezoneOffset() * 60000);
   let muCurrentISODateString = muOffsetDate.toISOString().substring(0,19);
   console.log(muCurrentISODateString);
@@ -303,7 +304,7 @@ function displayEventbriteResults(eventBriteApiResult, index) {
               <dt class="name bold-text">${eventBriteApiResult.name.text}</dt>
               <dd class="time bold-text"><time>${complete12HrTime}</time></dd>
               <dd><a href="${eventBriteApiResult.url}" target="_blank">Go to official page</a></dd>
-              <button class="js-reward-schedule rewardsitems">Schedule Reward</button>
+            <button class="js-reward-schedule rewardsitems">Schedule Reward</button>
             </dl>
           </article>`;
 }
@@ -330,7 +331,7 @@ function scheduleReward() {
 
 
 function generateSelectedRewardsString() {
-  selectedRewardsString = selectedRewards.map((reward, index) => 
+  let selectedRewardsString = selectedRewards.map((reward, index) => 
   generateSelectedAwardItem(reward, index));
 
   $('.chosen-reward-display').html(selectedRewardsString);
@@ -338,7 +339,7 @@ function generateSelectedRewardsString() {
 
 
 function generateSelectedAwardItem(reward) {
-  rewardStartStingLowerCase = reward.rewardStart.charAt(0).toLowerCase() + reward.rewardStart.slice(1);
+  let rewardStartStingLowerCase = reward.rewardStart.charAt(0).toLowerCase() + reward.rewardStart.slice(1);
   return `
     <p>${reward.rewardName} starts ${rewardStartStingLowerCase}</p>`
 }
@@ -373,7 +374,7 @@ function downloadSchedulePrompt() {
     let scheduledRewards = selectedRewards.map((reward) => `My reward ${reward.rewardName} starts at ${reward.rewardStart}\n`) 
     let scheduledRewardsWholeString = scheduledRewards.join();
 
-    fullScheduleString = `${wakeUpTimeString}\n${scheduledTasksWholeString}\n${scheduledRewardsWholeString}`;
+    let fullScheduleString = `${wakeUpTimeString}\n${scheduledTasksWholeString}\n${scheduledRewardsWholeString}`;
 
     console.log(wakeUpTimeString);
     console.log(scheduledTasksWholeString);

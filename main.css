@@ -39,7 +39,7 @@
 }
 
 .sub_title {
-  color: #ABB7B7;
+  color: #767777;
   font-family: 'Work Sans', sans-serif;
   font-size: 13px;  
   margin-left: 9px;
@@ -81,11 +81,6 @@ body {
 
 p {
   margin-bottom: 20px;
-}
-
-main {
-  padding: 20px 25px;
-  background: #ffffff;
 }
 
 legend {
@@ -159,6 +154,11 @@ fieldset {
   margin-bottom: 13px;
 }
 
+label[for="task-activity"] {
+  display: block;
+  margin-bottom: 13px;
+  margin-top: 25px;
+}
 
 
 
@@ -328,20 +328,6 @@ textarea::placeholder{
     margin: 0 auto;
     float: none;
   }
-
-/*
-
-  .parent { 
-    display: table;
-  }
-  #left-column {
-    display: table-footer-group;
-  }
-  #schedule-wrapper {
-    display: table-header-group;
-  }
-
-*/
 
 /* this isn't working */
   .demo_height { 
