@@ -369,10 +369,10 @@ function downloadSchedulePrompt() {
 
     let wakeUpTimeString = `I am going to wake up at ${wakeUpTime[0].wake}\n`
     let scheduledTasks = tasksAndTimes.map((task) => `From ${task.start} to ${task.end} I will ${task.activity}\n`) 
-    let scheduledTasksWholeString = scheduledTasks.join()
+    let scheduledTasksWholeString = scheduledTasks.join(' ')
     
     let scheduledRewards = selectedRewards.map((reward) => `My reward ${reward.rewardName} starts at ${reward.rewardStart}\n`) 
-    let scheduledRewardsWholeString = scheduledRewards.join();
+    let scheduledRewardsWholeString = scheduledRewards.join(' ');
 
     let fullScheduleString = `${wakeUpTimeString}\n${scheduledTasksWholeString}\n${scheduledRewardsWholeString}`;
 
