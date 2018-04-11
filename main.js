@@ -165,6 +165,8 @@ function getInfoFromEventbrite(lat, lng) {
   let currentDate = new Date();
   //here we are mitigating the "zero UTC offset"in .toISOString() 
   let offsetDate = new Date(currentDate.getTime() - currentDate.getTimezoneOffset() * 60000);
+  //the above and below are necessary when you call .toISOString to get the right format 
+  //it adds 5 hours
   let currentISODateString = offsetDate.toISOString().substring(0,19);
   console.log(currentISODateString);
   //getting the date two days from the current date in ISO format
@@ -216,7 +218,7 @@ $.ajax({
 function filterMeetupInfo(apiResult) {
   console.log(apiResult.results);
   //getting current time and date and the time and date exacty 
-  //two days in the future
+  //1.5 days in the future
   let Currenttime = new Date().getTime();
   let diff = 2160;
   let futureDate = new Date(Currenttime + diff*60000).getTime();
