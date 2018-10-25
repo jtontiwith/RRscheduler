@@ -81,6 +81,7 @@ body {
 
 p {
   margin-bottom: 20px;
+  overflow-wrap: break-word;
 }
 
 legend {
